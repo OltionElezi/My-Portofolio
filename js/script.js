@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  const currentUrl = window.location.href;
+  if (currentUrl.endsWith("index.html")) {
+    window.location.href = currentUrl + "#home";
+  }
+});
 /*------------- Toggle NavBar --------------*/
 
 const navToggler = document.querySelector(".nav-toggler");
@@ -6,6 +12,7 @@ navToggler.addEventListener("click", (e) => {
   toggleNavbar();
   document.body.classList.toggle("hide-scrolling");
 });
+
 function hideSection() {
   document.querySelector("section.active").classList.toggle("fade-out");
 }
@@ -37,6 +44,23 @@ document.addEventListener("click", (e) => {
     window.history.pushState(null, null, newUrl);
   }
 });
+
+function updateActiveSection() {
+  const hash = window.location.hash;
+  const activeSection = document.querySelector("section.active");
+  if (activeSection) {
+    activeSection.classList.remove("active", "fade-out");
+  }
+  const newActiveSection = document.querySelector(hash);
+  if (newActiveSection) {
+    newActiveSection.classList.add("active");
+    window.scrollTo(0, 0);
+  }
+}
+
+// Call the updateActiveSection function on page load and on hash change
+window.addEventListener("load", updateActiveSection);
+window.addEventListener("hashchange", updateActiveSection);
 
 /* -------------- About Tabs ---------------*/
 
