@@ -118,3 +118,21 @@ function portfolioItemDetails(portfolioItem) {
     ".portfolio-item-details"
   ).innerHTML;
 }
+//Carousel
+
+// const images = document.querySelectorAll("#portfolio-item-images img");
+// let currentImageIndex = 0;
+
+// document.querySelector("#prev-btn").addEventListener("click", () => {
+//   images[currentImageIndex].style.display = "none";
+//   currentImageIndex =
+//     currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
+//   images[currentImageIndex].style.display = "block";
+// });
+
+// document.querySelector("#next-btn").addEventListener("click", () => {
+//   images[currentImageIndex].style.display = "none";
+//   currentImageIndex =
+//     currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+//   images[currentImageIndex].style.display = "block";
+// });
