@@ -58,7 +58,6 @@ function updateActiveSection() {
   }
 }
 
-// Call the updateActiveSection function on page load and on hash change
 window.addEventListener("load", updateActiveSection);
 window.addEventListener("hashchange", updateActiveSection);
 
@@ -100,7 +99,7 @@ document
   .querySelector(".pp-close")
   .addEventListener("click", togglePortfolioPopup);
 
-// hide popup when clicking outside of it
+// Hide popup when clicking outside of it
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("pp-inner")) {
     togglePortfolioPopup();
